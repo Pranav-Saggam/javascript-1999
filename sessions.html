@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>Diferrent Storages</title>
+</head>
+
+
+<body>
+    <h1>Local Storage Count</h1>
+    <button onclick="localStorageCount()">Local Increment</button>
+    <h3 id="localCount"></h3>
+
+
+    <h1>Session Storage Count</h1>
+    <button onclick="sessionStorageCount()">Session Increment</button>
+    <h3 id="sessionCount"></h3>
+
+    <script type="text/javascript">
+
+
+
+
+        function localStorageCount() {
+
+            localStorage.setItem("local", Number(localStorage.getItem("local")) + 1);
+            document.getElementById('localCount').innerHTML = localStorage.getItem("local");
+        }
+
+        function sessionStorageCount() {
+            sessionStorage.setItem("session", Number(sessionStorage.getItem("session")) + 1);
+            document.getElementById('sessionCount').innerHTML = sessionStorage.getItem("session");
+
+        }
+
+    </script>
+</body>
+
+</html>
