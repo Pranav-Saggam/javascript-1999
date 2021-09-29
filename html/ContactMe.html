@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script>
+            function validateForm(){
+                let name = document.forms["myForm"]["name"].value;
+                if(name == ""){
+                    alert("Name cannot be empty");
+                    return false;
+                }
+                var x=document.myForm.email.value;  
+                var atposition=x.indexOf("@");  
+                var dotposition=x.lastIndexOf(".");  
+                if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+                alert("Please enter a valid e-mail address");  
+                return false;  
+                }  
+            }
+        </script>
+    </head>
+    <body>
+        
+        <div class="container">
+            <div style="text-align:center">
+              <h2>Contact Us</h2>
+              <p>Swing by for a cup of coffee, or leave us a message:</p>
+            </div>
+            <div class="row">
+              <div class="column">
+                <img class="contactme" src="https://thumbs.dreamstime.com/b/contact-me-word-wooden-cubes-written-188527637.jpg" style="width:100%; height: 55%;">
+              </div>
+              <div class="column">
+                <form name="myForm" onsubmit="return validateForm()">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="fullname" placeholder="Your name..">
+                  <label for="email">Email</label>
+                  <input type="text" id="email" name="email" placeholder="Your Email">
+                  <label for="country">Country</label>
+                  <select id="country" name="country">
+                    <option value="india">India</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                  </select>
+                  <label for="subject">Subject</label>
+                  <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+                  <input type="Submit" value="Submit">
+                </form>
+              </div>
+            </div>
+          </div> 
+    </body>
+</html>
